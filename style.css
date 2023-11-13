@@ -9,7 +9,7 @@
 }
 
 body {
-  padding: 130px 40px;
+  padding: 40px;
   background: var(--background);
   display: flex;
   flex-direction: column;
@@ -124,7 +124,7 @@ body {
 @media (min-width: 576px) {
   #add-button-container {
     position: absolute;
-    top: 130px;
+    top: 40px;
     right: 40px;
     width: 50px;
     height: 50px;
