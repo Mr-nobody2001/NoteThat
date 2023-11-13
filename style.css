@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat&display=swap");
+
+/* General settings */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-note;
+}
+
+body {
+  padding: 130px 40px;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+:root {
+  --background: #add;
+
+  --note-blue: #7afcff;
+  --note-pink: #ff65a3;
+  --note-yellow: #fff740;
+  --note-purple: #bd8dc1;
+  --note-green: #abd373;
+}
+
+#notes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Paper style */
+
+.note h1 {
+  text-align: center;
+  outline: none;
+}
+
+.note p {
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.note {
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  min-width: 250px;
+  width: 25%;
+  max-width: 350px;
+  height: 300px;
+  border-radius: 2px;
+  font-family: Caveat, Courier, monospace;
+}
+
+.note-blue {
+  background-color: var(--note-blue);
+}
+
+.note-pink {
+  background-color: var(--note-pink);
+}
+
+.note-yellow {
+  background-color: var(--note-yellow);
+}
+
+.note-purple {
+  background-color: var(--note-purple);
+}
+
+.note-green {
+  background-color: var(--note-green);
+}
+
+.note::before,
+.note::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.note::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.note::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.note:hover::before,
+.note:hover::after {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.note:hover::before {
+  left: 5px;
+}
+
+.note:hover::after {
+  right: 5px;
+}
+
+/* Add button */
+#add-button-container {
+  position: static;
+}
+
+@media (min-width: 576px) {
+  #add-button-container {
+    position: absolute;
+    top: 130px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    margin-top: 12px;
+  }
+}
+
+#add-button-container button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+#add-button-container button:hover {
+  cursor: pointer;
+}
+
+#add-button-container i {
+  font-size: 2rem;
+}
+
+/* Delete icon */
+
+.delete-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.3rem;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+/* Remove default icon */
+
+/* Chrome, Edge e Opera */
+input[type="search"]::-webkit-search-clear-button,
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Firefox */
+input[type="text"]::-moz-clear {
+  display: none;
+}
+
+/* Safari */
+input[type="search"]::-webkit-search-clear-button,
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Change scrollbar */
+
+/* Chrome, Edge e Opera */
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: 0px;
+}
